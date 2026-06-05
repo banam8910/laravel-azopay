@@ -1,0 +1,49 @@
+{
+    "name": "ftech/laravel-azopay",
+    "description": "Laravel package for the AzoPay payment gateway (VietQR bank transfer with automatic reconciliation).",
+    "keywords": ["laravel", "azopay", "vietqr", "payment", "gateway", "vietnam", "bank-transfer"],
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://azopay.vn",
+    "authors": [
+        {
+            "name": "Ftech",
+            "email": "hi@ftech.ltd"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^10.0 || ^11.0 || ^12.0",
+        "illuminate/http": "^10.0 || ^11.0 || ^12.0",
+        "illuminate/support": "^10.0 || ^11.0 || ^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0",
+        "phpunit/phpunit": "^10.0 || ^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ftech\\AzoPay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ftech\\AzoPay\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ftech\\AzoPay\\AzoPayServiceProvider"
+            ],
+            "aliases": {
+                "AzoPay": "Ftech\\AzoPay\\Facades\\AzoPay"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
