@@ -4,23 +4,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Environment
-    |--------------------------------------------------------------------------
-    |
-    | Which AzoPay environment to talk to. Use "sandbox" for testing and
-    | "live" for production. This selects the base URL below.
-    |
-    */
-
-    'environment' => env('AZOPAY_ENV', 'sandbox'),
-
-    /*
-    |--------------------------------------------------------------------------
     | API key
     |--------------------------------------------------------------------------
     |
     | The API key issued from your AzoPay dashboard. Sent as a Bearer token on
-    | every API request.
+    | every API request. The server determines whether the key is sandbox or
+    | live, so there is no environment flag to configure here.
     |
     */
 
@@ -28,18 +17,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Base URLs
+    | API URL
     |--------------------------------------------------------------------------
     |
-    | The REST API roots for each environment. The client appends the
-    | "/api/v1/" path prefix automatically.
+    | The REST API root. The client appends the "/api/v1/" path prefix
+    | automatically. Defaults to the AzoPay production endpoint.
     |
     */
 
-    'base_url' => [
-        'sandbox' => env('AZOPAY_SANDBOX_URL', 'https://staging-api.azopay.vn'),
-        'live'    => env('AZOPAY_LIVE_URL', 'https://my.azopay.vn'),
-    ],
+    'api_url' => env('AZOPAY_API_URL', 'https://app.azopay.vn'),
 
     /*
     |--------------------------------------------------------------------------

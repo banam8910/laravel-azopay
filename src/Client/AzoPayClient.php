@@ -10,8 +10,8 @@ use Illuminate\Http\Client\Response;
 /**
  * Thin HTTP client around the AzoPay REST API.
  *
- * Handles base URL resolution per environment, bearer auth, the /api/v1
- * prefix and turning non-2xx responses into {@see ApiException}.
+ * Handles base URL resolution, bearer auth, the /api/v1 prefix and turning
+ * non-2xx responses into {@see ApiException}.
  */
 class AzoPayClient
 {
@@ -93,11 +93,7 @@ class AzoPayClient
 
     protected function baseUrl(): string
     {
-        $env = $this->config['environment'] ?? 'sandbox';
-
-        return $this->config['base_url'][$env]
-            ?? $this->config['base_url']['sandbox']
-            ?? 'https://staging-api.azopay.vn';
+        return (string) ($this->config['api_url'] ?? 'https://app.azopay.vn');
     }
 
     protected function userAgent(): string

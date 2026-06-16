@@ -20,15 +20,15 @@ php artisan vendor:publish --tag=azopay-config
 Cấu hình `.env`:
 
 ```dotenv
-AZOPAY_ENV=sandbox                 # sandbox | live
-AZOPAY_API_KEY=your-api-key
+AZOPAY_API_KEY=your-api-key        # server tự nhận diện sandbox/live theo API key
+AZOPAY_API_URL=https://app.azopay.vn
 AZOPAY_BANK_ACCOUNT_ID=42          # ID tài khoản nhận tiền trên dashboard
 AZOPAY_PAY_CODE_PREFIX=DH
 AZOPAY_EXPIRES_IN=3600
 AZOPAY_WEBHOOK_SECRET=whsec_xxx    # có thể nhiều secret, cách nhau bằng dấu phẩy
 ```
 
-Base URL mặc định: `https://staging-api.azopay.vn` (sandbox) và `https://my.azopay.vn` (live).
+API URL mặc định: `https://app.azopay.vn`. Server tự kiểm tra sandbox/live dựa trên API key nên không cần chọn môi trường.
 
 ## Tạo đơn thanh toán
 
