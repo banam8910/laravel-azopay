@@ -93,7 +93,7 @@ class AzoPayClient
 
     protected function baseUrl(): string
     {
-        return (string) ($this->config['api_url'] ?? 'https://app.azopay.vn');
+        return (string) ($this->config['api_url'] ?? 'https://api.azopay.vn');
     }
 
     protected function userAgent(): string

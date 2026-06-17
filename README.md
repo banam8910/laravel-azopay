@@ -21,14 +21,14 @@ Cấu hình `.env`:
 
 ```dotenv
 AZOPAY_API_KEY=your-api-key        # server tự nhận diện sandbox/live theo API key
-AZOPAY_API_URL=https://app.azopay.vn
+AZOPAY_API_URL=https://api.azopay.vn
 AZOPAY_BANK_ACCOUNT_ID=42          # ID tài khoản nhận tiền trên dashboard
 AZOPAY_PAY_CODE_PREFIX=DH
 AZOPAY_EXPIRES_IN=3600
 AZOPAY_WEBHOOK_SECRET=whsec_xxx    # có thể nhiều secret, cách nhau bằng dấu phẩy
 ```
 
-API URL mặc định: `https://app.azopay.vn`. Server tự kiểm tra sandbox/live dựa trên API key nên không cần chọn môi trường.
+API URL mặc định: `https://api.azopay.vn`. Cả live lẫn sandbox đều dùng chung URL này, chỉ khác nhau ở API key (server tự nhận diện).
 
 ## Tạo đơn thanh toán
 

@@ -21,11 +21,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | The REST API root. The client appends the "/api/v1/" path prefix
-    | automatically. Defaults to the AzoPay production endpoint.
+    | automatically. Both live and sandbox use the same URL; only the API key
+    | differs.
     |
     */
 
-    'api_url' => env('AZOPAY_API_URL', 'https://app.azopay.vn'),
+    'api_url' => env('AZOPAY_API_URL', 'https://api.azopay.vn'),
 
     /*
     |--------------------------------------------------------------------------
